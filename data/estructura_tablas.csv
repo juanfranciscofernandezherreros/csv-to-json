@@ -1,0 +1,24 @@
+table_name,column_name,data_type,is_primary_key
+tabla_autoincremental,id,INT,AUTO_INCREMENT,YES
+tabla_autoincremental,nombre,VARCHAR(50),NO
+tabla_clave_simple,codigo,VARCHAR(10),YES
+tabla_clave_simple,descripcion,VARCHAR(100),NO
+tabla_clave_compuesta,id,INT,YES
+tabla_clave_compuesta,codigo,VARCHAR(10),YES
+tabla_clave_compuesta,valor,DECIMAL(10, 2),NO
+tabla_clave_uuid,uuid,CHAR(36),YES
+tabla_clave_uuid,datos,TEXT,NO
+tabla_clave_bigint,id,BIGINT,YES
+tabla_clave_bigint,nombre,VARCHAR(50),NO
+tabla_clave_tinyint,id,TINYINT,YES
+tabla_clave_tinyint,descripcion,VARCHAR(100),NO
+tabla_clave_smallint,id,SMALLINT,YES
+tabla_clave_smallint,nombre,VARCHAR(50),NO
+tabla_clave_mediumint,id,MEDIUMINT,YES
+tabla_clave_mediumint,descripcion,VARCHAR(100),NO
+tabla_clave_unsigned,id,INT UNSIGNED,YES
+tabla_clave_unsigned,valor,DECIMAL(10, 2),NO
+tabla_clave_date,fecha,DATE,YES
+tabla_clave_date,evento,VARCHAR(100),NO
+tabla_clave_timestamp,timestamp,TIMESTAMP DEFAULT CURRENT_TIMESTAMP,YES
+tabla_clave_timestamp,log,TEXT,NO

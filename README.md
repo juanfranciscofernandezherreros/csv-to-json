@@ -1,0 +1,38 @@
+SELECT
+    UPPER(TABLE_NAME) AS TABLE_NAME,
+    UPPER(COLUMN_NAME) AS COLUMN_NAME,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' AND EXTRA LIKE '%auto_increment%' THEN CONCAT(UPPER(DATA_TYPE), ' AUTO_INCREMENT')
+        ELSE UPPER(DATA_TYPE)
+    END AS DATA_TYPE,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' THEN 'YES'
+        ELSE 'NO'
+    END AS IS_PRIMARY_KEY
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    TABLE_SCHEMA = 'sports'
+ORDER BY
+    TABLE_NAME, ORDINAL_POSITION;
+
+---
+
+SELECT
+    LOWER(TABLE_NAME) AS table_name,
+    LOWER(COLUMN_NAME) AS column_name,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' AND EXTRA LIKE '%auto_increment%' THEN CONCAT(LOWER(DATA_TYPE), ' auto_increment')
+        ELSE LOWER(DATA_TYPE)
+    END AS data_type,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' THEN 'yes'
+        ELSE 'no'
+    END AS is_primary_key
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    TABLE_SCHEMA = 'sports'
+ORDER BY
+    table_name, ORDINAL_POSITION;
+

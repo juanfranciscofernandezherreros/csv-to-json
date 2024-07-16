@@ -1,0 +1,17 @@
+SELECT
+    TABLE_NAME AS table_name,
+    COLUMN_NAME AS column_name,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' AND EXTRA LIKE '%auto_increment%' THEN CONCAT(DATA_TYPE, ' AUTO_INCREMENT')
+        ELSE DATA_TYPE 
+    END AS data_type,
+    CASE 
+        WHEN COLUMN_KEY = 'PRI' THEN 'YES'
+        ELSE 'NO'
+    END AS is_primary_key
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    TABLE_SCHEMA = 'sports'
+ORDER BY
+    TABLE_NAME, ORDINAL_POSITION;
